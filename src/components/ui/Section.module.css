@@ -1,0 +1,11 @@
+.section {
+    padding: 5rem 0;
+}
+
+.white {
+    background-color: var(--bg-primary);
+}
+
+.gray {
+    background-color: var(--bg-secondary);
+}

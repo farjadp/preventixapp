@@ -1,27 +1,18 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* پالت رنگی: جدی، فیزیکی و مات */
+  --bg-paper: #f4f4f0; /* رنگ کاغذ استخوانی */
+  --bg-white: #ffffff;
+  --ink-black: #1a1a1a;
+  --dental-teal: #2a7a78; /* سبز تیره دندانپزشکی (مات) */
+  --dental-light: #def2f1;
+  
+  --border-thick: 2px solid var(--ink-black);
+  --border-thin: 1px solid var(--ink-black);
+  
+  --font-main: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-mono: 'Courier New', Courier, monospace; /* برای داده‌ها */
+  
+  --max-width: 1024px; /* عرض محدود برای جلوگیری از پهن شدن */
 }
 
 * {
@@ -30,13 +21,28 @@ body {
   margin: 0;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+body {
+  background-color: var(--bg-paper);
+  color: var(--ink-black);
+  font-family: var(--font-main);
+  line-height: 1.4;
+  /* ایجاد یک حاشیه دور تا دور سایت */
+  padding: 20px; 
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+a { text-decoration: none; color: inherit; }
+
+/* کانتینر مرکزی که کل سایت را جمع‌وجور می‌کند */
+.main-frame {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  border: var(--border-thick);
+  background: var(--bg-white);
+  box-shadow: 10px 10px 0px rgba(0,0,0,0.1); /* سایه سخت و تخت */
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
 }

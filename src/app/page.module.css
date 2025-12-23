@@ -1,141 +1,150 @@
-.page {
-  --background: #fafafa;
-  --foreground: #fff;
-
-  --text-primary: #000;
-  --text-secondary: #666;
-
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-  --button-secondary-border: #ebebeb;
-
-  display: flex;
-  min-height: 100vh;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-geist-sans);
-  background-color: var(--background);
+/* --- ساختار شبکه ای (Grid System) --- */
+.gridContainer {
+  display: grid;
+  grid-template-columns: 60% 40%; /* تقسیم صفحه به دو بخش نامساوی */
 }
 
-.main {
-  display: flex;
-  min-height: 100vh;
-  width: 100%;
-  max-width: 800px;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  background-color: var(--foreground);
-  padding: 120px 60px;
+.borderBottom {
+  border-bottom: var(--border-thick);
 }
 
-.intro {
+.borderRight {
+  border-right: var(--border-thick);
+}
+
+.paddingBox {
+  padding: 60px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  gap: 24px;
-}
-
-.intro h1 {
-  max-width: 320px;
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 48px;
-  letter-spacing: -2.4px;
-  text-wrap: balance;
-  color: var(--text-primary);
-}
-
-.intro p {
-  max-width: 440px;
-  font-size: 18px;
-  line-height: 32px;
-  text-wrap: balance;
-  color: var(--text-secondary);
-}
-
-.intro a {
-  font-weight: 500;
-  color: var(--text-primary);
-}
-
-.ctas {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  max-width: 440px;
-  gap: 16px;
-  font-size: 14px;
-}
-
-.ctas a {
-  display: flex;
   justify-content: center;
-  align-items: center;
-  height: 40px;
-  padding: 0 16px;
-  border-radius: 128px;
-  border: 1px solid transparent;
-  transition: 0.2s;
-  cursor: pointer;
+}
+
+/* --- Hero Section --- */
+.heroTag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  background: var(--ink-black);
+  color: white;
+  display: inline-block;
+  padding: 4px 8px;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+}
+
+.heroTitle {
+  font-size: 3.5rem;
+  line-height: 0.95;
+  margin-bottom: 32px;
+}
+
+.heroLead {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #444;
+  margin-bottom: 40px;
+  max-width: 400px;
+  border-left: 2px solid var(--dental-teal);
+  padding-left: 16px;
+}
+
+.btnPrimary {
+  display: inline-block;
+  background: var(--dental-teal);
+  color: white;
+  padding: 16px 32px;
+  font-weight: 700;
+  border: 2px solid var(--ink-black);
+  transition: all 0.2s;
+  text-align: center;
   width: fit-content;
-  font-weight: 500;
 }
 
-a.primary {
-  background: var(--text-primary);
-  color: var(--background);
-  gap: 8px;
+.btnPrimary:hover {
+  background: var(--ink-black);
+  transform: translate(4px, 4px); /* افکت حرکت دکمه */
 }
 
-a.secondary {
-  border-color: var(--button-secondary-border);
+/* --- Visual Side (Right) --- */
+.patternBox {
+  background-color: var(--dental-light);
+  background-image: radial-gradient(var(--dental-teal) 1px, transparent 1px);
+  background-size: 20px 20px; /* پترن نقطه‌ای مهندسی */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
 }
 
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
-  }
-
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
-  }
+.dataCard {
+  background: white;
+  border: var(--border-thin);
+  padding: 20px;
+  width: 100%;
+  max-width: 280px;
+  box-shadow: 6px 6px 0px var(--ink-black);
 }
 
-@media (max-width: 600px) {
-  .main {
-    padding: 48px 24px;
-  }
-
-  .intro {
-    gap: 16px;
-  }
-
-  .intro h1 {
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: -1.92px;
-  }
+.dataRow {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dashed #ccc;
+  padding: 12px 0;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
+.dataRow:last-child { border-bottom: none; }
+.dataVal { font-weight: bold; color: var(--dental-teal); }
+
+/* --- Features Strip (نوار ویژگی‌ها) --- */
+.tickerStrip {
+  background: var(--ink-black);
+  color: white;
+  padding: 16px;
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}
+
+/* --- Three Columns Section --- */
+.tripleGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.featureBox {
+  padding: 40px 30px;
+  border-right: var(--border-thin);
+}
+
+.featureBox:last-child { border-right: none; }
+
+.featureNum {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #e5e5e5; /* شماره‌های بزرگ و کمرنگ در پس‌زمینه */
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.featureTitle {
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+}
+
+.featureText {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .gridContainer, .tripleGrid {
+    grid-template-columns: 1fr;
   }
-
-  .page {
-    --background: #000;
-    --foreground: #000;
-
-    --text-primary: #ededed;
-    --text-secondary: #999;
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-    --button-secondary-border: #1a1a1a;
-  }
+  .borderRight { border-right: none; border-bottom: var(--border-thick); }
+  .featureBox { border-right: none; border-bottom: var(--border-thin); }
+  .heroTitle { font-size: 2.5rem; }
+  .paddingBox { padding: 40px 20px; }
 }

@@ -1,0 +1,101 @@
+.header {
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.header p {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+}
+
+.phases {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.phase {
+    border: 1px solid #e5e7eb;
+    padding: 3rem;
+    border-radius: var(--border-radius-md);
+    background: white;
+}
+
+.phasePrimary {
+    border-color: var(--primary-blue);
+    background: #fcfdfe;
+}
+
+.phaseLabel {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.phasePrimary .phaseLabel {
+    color: var(--primary-blue);
+}
+
+.phase h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.phaseDesc {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.features {
+    list-style: none;
+}
+
+.features li {
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--text-primary);
+}
+
+.features li::before {
+    content: "•";
+    color: var(--accent-green);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.rationale {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.rationale h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.rationale p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+    .phases {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,144 @@
+.footer {
+    /* هماهنگی با عرض فریم اصلی سایت */
+    max-width: 1024px;
+    margin: 0 auto;
+    
+    background-color: #ffffff;
+    color: #1a1a1a;
+    
+    /* ادامه دادن خطوط فریم اصلی */
+    border-left: 2px solid #1a1a1a;
+    border-right: 2px solid #1a1a1a;
+    border-bottom: 2px solid #1a1a1a;
+    
+    /* خط جداکننده از محتوای اصلی */
+    border-top: 2px solid #1a1a1a;
+}
+
+/* --- بخش CTA بالا --- */
+.ctaRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 40px;
+    border-bottom: 2px solid #1a1a1a;
+    background-color: #f4f4f0; /* رنگ کاغذ تیره برای تمایز */
+}
+
+.ctaText h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.ctaButton {
+    display: inline-block;
+    background: #1a1a1a;
+    color: #fff;
+    padding: 16px 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+    border: 2px solid #1a1a1a;
+    box-shadow: 6px 6px 0px rgba(0,0,0,0.1);
+}
+
+.ctaButton:hover {
+    background: #fff;
+    color: #1a1a1a;
+    box-shadow: 4px 4px 0px #1a1a1a;
+    transform: translate(2px, 2px);
+}
+
+/* --- بخش لینک‌ها --- */
+.linksGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 ستون مساوی */
+}
+
+.column {
+    padding: 30px;
+    border-right: 1px solid #1a1a1a; /* خطوط نازک داخلی */
+}
+
+.column:last-child {
+    border-right: none;
+}
+
+.colHeader {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    background: #1a1a1a;
+    color: #fff;
+    display: inline-block;
+    padding: 2px 6px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.linkList {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.linkList a {
+    font-size: 0.9rem;
+    color: #555;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.linkList a:hover {
+    color: #000;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+/* --- بخش کپی‌رایت پایین --- */
+.bottomRow {
+    border-top: 2px solid #1a1a1a;
+    padding: 16px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.75rem;
+    background: #fff;
+}
+
+.statusDot {
+    width: 8px;
+    height: 8px;
+    background-color: #2a7a78; /* سبز دندانپزشکی */
+    display: inline-block;
+    margin-right: 8px;
+    border-radius: 50%;
+}
+
+/* واکنش‌گرا */
+@media (max-width: 768px) {
+    .ctaRow {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 40px 20px;
+    }
+    
+    .linksGrid {
+        grid-template-columns: 1fr 1fr; /* تبدیل به 2 ستون */
+    }
+    
+    .column {
+        border-right: 1px solid #1a1a1a;
+        border-bottom: 1px solid #1a1a1a;
+    }
+    
+    .column:nth-child(2n) {
+        border-right: none;
+    }
+}

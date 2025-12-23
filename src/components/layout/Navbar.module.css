@@ -1,0 +1,118 @@
+.navbar {
+    height: 72px;
+    width: 100%;
+    /* چسبیدن به بالا ولی با استایل کاغذی */
+    position: sticky; 
+    top: 0;
+    z-index: 1000;
+    
+    background-color: #ffffff; /* سفید خالص مثل کاغذ سند */
+    border-bottom: 2px solid #1a1a1a; /* خط جداکننده ضخیم جوهری */
+}
+
+.container {
+    /* هماهنگ با عرض فریم اصلی صفحه (که در مرحله قبل 1024px بود) */
+    max-width: 1024px; 
+    margin: 0 auto;
+    padding: 0 20px; /* پدینگ مطابق با بادی صفحه */
+    height: 100%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    /* خطوط عمودی تزئینی در دو طرف برای ادامه دادن چارچوب صفحه */
+    border-left: 2px solid #1a1a1a;
+    border-right: 2px solid #1a1a1a;
+    background: #ffffff;
+}
+
+/* لوگو: ساده، سیاه، تایپوگرافی سنگین */
+.logo {
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: #1a1a1a;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* تگ کوچک کنار لوگو (مثل شماره نسخه) */
+.versionTag {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.65rem;
+    background: #1a1a1a;
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 0; /* گوشه‌های تیز */
+    font-weight: 400;
+    letter-spacing: 0;
+}
+
+.links {
+    display: flex;
+    gap: 2rem;
+    height: 100%;
+    align-items: center;
+}
+
+.link {
+    font-family: 'Courier New', Courier, monospace; /* فونت مهندسی */
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #555;
+    text-transform: uppercase;
+    position: relative;
+    padding: 4px 0;
+    transition: color 0.2s;
+}
+
+/* هاور: خط کشیدن زیر متن به سبک کلاسیک */
+.link:hover {
+    color: #1a1a1a;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+/* دکمه CTA: جعبه‌ای با سایه سخت */
+.ctaButton {
+    padding: 10px 24px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: #2a7a78; /* همان سبز تیره دندانپزشکی */
+    border: 2px solid #1a1a1a;
+    text-transform: uppercase;
+    transition: all 0.1s ease;
+    
+    /* سایه سخت و بدون تاری */
+    box-shadow: 4px 4px 0px #1a1a1a;
+}
+
+.ctaButton:hover {
+    transform: translate(2px, 2px); /* حرکت دکمه به سمت سایه */
+    box-shadow: 2px 2px 0px #1a1a1a; /* کوچک شدن سایه */
+}
+
+/* منوی موبایل */
+.mobileMenuBtn {
+    display: none;
+    font-size: 1.5rem;
+    color: #1a1a1a;
+    cursor: pointer;
+    border: 2px solid #1a1a1a;
+    padding: 4px 8px;
+    box-shadow: 3px 3px 0 #1a1a1a;
+}
+
+@media (max-width: 768px) {
+    .links { display: none; }
+    .mobileMenuBtn { display: block; }
+    .container {
+        border-left: none; /* در موبایل خطوط کناری را حذف می‌کنیم تا فضا بازتر شود */
+        border-right: none;
+    }
+}
