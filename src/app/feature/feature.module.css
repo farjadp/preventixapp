@@ -1,10 +1,10 @@
 /**
- * PRIVACY MODULE STYLES
- * Style: Swiss / Legal Audit Log
- * Layout: 2-Column Grid with "Contractual" look.
+ * FEATURE MODULE STYLES
+ * Style: Swiss / Technical Spec Sheet
+ * Layout: Zero-gap grid with internal borders.
  */
 
-/* کانتینر اصلی */
+/* کانتینر اصلی صفحه */
 .pageContainer {
     width: 100%;
     max-width: var(--max-width); /* 1024px */
@@ -30,8 +30,7 @@
 .headerRight {
     padding: 60px 40px;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    align-items: flex-end;
     background-color: var(--bg-paper);
 }
 
@@ -61,75 +60,80 @@
     font-weight: 500;
 }
 
-/* --- Compliance Grid --- */
-.complianceGrid {
+/* --- Features Grid (The Spec Sheet) --- */
+.gridContainer {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr); /* 3 ستون */
+    /* در این سبک، فاصله (Gap) حذف می‌شود و از Border استفاده می‌کنیم */
     border-bottom: var(--border-thick);
 }
 
-.policyCard {
-    padding: 50px 40px;
+.card {
+    padding: 40px 30px;
     border-right: var(--border-thin);
     border-bottom: var(--border-thin);
-    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 280px;
     transition: background 0.2s;
+    background: #fff;
 }
 
-/* حذف خط عمودی ستون دوم */
-.policyCard:nth-child(2n) {
+/* حذف خط عمودی ستون آخر برای تمیزی */
+.card:nth-child(3n) {
     border-right: none;
 }
 
-.policyCard:hover {
+/* حذف خط افقی ردیف آخر (اختیاری، بسته به سلیقه) */
+/* .card:nth-last-child(-n+3) { border-bottom: none; } */
+
+.card:hover {
     background-color: var(--bg-paper);
 }
 
-/* --- Card Details --- */
-.iconBox {
+/* --- Card Content --- */
+.cardIndex {
     font-family: var(--font-mono);
     font-size: 1.5rem;
-    margin-bottom: 20px;
-    color: var(--dental-teal);
     font-weight: 700;
+    color: #e5e5e5; /* شماره‌های بزرگ و کمرنگ */
+    margin-bottom: 20px;
 }
 
-.policyTitle {
+.cardTitle {
     font-size: 1.25rem;
     font-weight: 700;
     color: var(--ink-black);
     margin-bottom: 12px;
     text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    letter-spacing: -0.02em;
 }
 
-.policyText {
+.cardDesc {
     font-size: 0.95rem;
-    line-height: 1.6;
-    color: #444;
+    line-height: 1.5;
+    color: #555;
 }
 
-/* --- Security Badge (Footer Strip) --- */
-.securityStrip {
-    padding: 24px 40px;
-    background: var(--ink-black);
-    color: white;
-    font-family: var(--font-mono);
-    font-size: 0.85rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-transform: uppercase;
+/* خط سبز تزئینی کوچک زیر تیتر */
+.cardTitle::after {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 3px;
+    background: var(--dental-teal);
+    margin-top: 12px;
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-    .headerSection, .complianceGrid {
+@media (max-width: 900px) {
+    .headerSection, .gridContainer {
         grid-template-columns: 1fr;
     }
     .headerLeft { border-right: none; border-bottom: var(--border-thick); }
-    .policyCard { border-right: none; }
-    .securityStrip { flex-direction: column; gap: 10px; align-items: flex-start; }
+    .card { 
+        border-right: none; 
+        min-height: auto;
+    }
 }

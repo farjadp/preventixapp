@@ -1,0 +1,149 @@
+/**
+ * ABOUT US MODULE STYLES
+ * Style: Swiss / Brutalist Medical
+ * Context: Fits inside the global .main-frame width (1024px).
+ * Features: High contrast, grid layouts, monospace accents.
+ */
+
+/* 
+   کانتینر اصلی صفحه
+   چون در layout.tsx نوبار و فوتر دارید، اینجا فقط محتوا را هندل می‌کنیم.
+   اما برای هماهنگی با Home، از خطوط کناری و عرض محدود استفاده می‌کنیم.
+*/
+.pageContainer {
+    width: 100%;
+    max-width: var(--max-width); /* 1024px from globals */
+    margin: 0 auto;
+    background-color: var(--bg-white);
+    
+    /* خطوط کناری برای اتصال به هدر و فوتر */
+    border-left: var(--border-thick);
+    border-right: var(--border-thick);
+}
+
+/* --- Section 1: Page Header --- */
+.headerSection {
+    display: grid;
+    grid-template-columns: 60% 40%; /* تقسیم‌بندی نامتقارن مثل صفحه اصلی */
+    border-bottom: var(--border-thick);
+}
+
+.headerLeft {
+    padding: 60px 40px;
+    border-right: var(--border-thick);
+}
+
+.headerRight {
+    padding: 60px 40px;
+    display: flex;
+    align-items: flex-end;
+    background-color: var(--bg-paper); /* کمی تیره‌تر برای کنتراست */
+}
+
+.label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    background: var(--dental-teal);
+    color: white;
+    padding: 4px 8px;
+    display: inline-block;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+}
+
+.title {
+    font-size: 3.5rem;
+    line-height: 0.95;
+    margin-bottom: 24px;
+    color: var(--ink-black);
+}
+
+.lead {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+    max-width: 400px;
+}
+
+/* --- Section 2: Mission Grid (3 Columns) --- */
+.missionGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-bottom: var(--border-thick);
+}
+
+.gridItem {
+    padding: 40px 30px;
+    border-right: var(--border-thin);
+}
+
+.gridItem:last-child {
+    border-right: none;
+}
+
+.gridIcon {
+    font-family: var(--font-mono);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--dental-teal);
+}
+
+.gridTitle {
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.gridText {
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.5;
+}
+
+/* --- Section 3: Values (Inverted / Dark Mode) --- */
+.valuesSection {
+    background-color: var(--ink-black);
+    color: white;
+    padding: 60px 40px;
+}
+
+.valuesHeader {
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.valuesGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.valueCard h4 {
+    color: var(--dental-teal);
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    font-family: var(--font-mono);
+}
+
+.valueCard p {
+    color: #ccc;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    border-left: 2px solid #333;
+    padding-left: 12px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .headerSection, .missionGrid, .valuesGrid {
+        grid-template-columns: 1fr;
+    }
+    .headerLeft { border-right: none; border-bottom: var(--border-thick); }
+    .gridItem { border-right: none; border-bottom: var(--border-thin); }
+    .pageContainer { border-left: none; border-right: none; }
+}

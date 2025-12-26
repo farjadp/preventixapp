@@ -1,101 +1,175 @@
-.header {
-    margin-bottom: 4rem;
-    text-align: center;
+/**
+ * PRODUCT MODULE STYLES
+ * Style: Swiss / Strategic Roadmap
+ * Layout: Split Grid with "Evolutionary" flow.
+ */
+
+/* کانتینر اصلی */
+.pageContainer {
+    width: 100%;
+    max-width: var(--max-width); /* 1024px */
+    margin: 0 auto;
+    background-color: var(--bg-white);
+    border-left: var(--border-thick);
+    border-right: var(--border-thick);
+    min-height: 100vh;
 }
 
-.header h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+/* --- Header Section --- */
+.headerSection {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    border-bottom: var(--border-thick);
 }
 
-.header p {
-    font-size: 1.25rem;
-    color: var(--text-secondary);
+.headerLeft {
+    padding: 60px 40px;
+    border-right: var(--border-thick);
 }
 
-.phases {
+.headerRight {
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: var(--bg-paper);
+}
+
+.label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    background: var(--ink-black);
+    color: white;
+    padding: 4px 8px;
+    display: inline-block;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+}
+
+.title {
+    font-size: 3.5rem;
+    line-height: 0.95;
+    margin-bottom: 24px;
+    color: var(--ink-black);
+    text-transform: uppercase;
+}
+
+.lead {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+    font-weight: 500;
+}
+
+/* --- Roadmap Grid --- */
+.roadmapGrid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    margin-bottom: 2rem;
+    border-bottom: var(--border-thick);
 }
 
-.phase {
-    border: 1px solid #e5e7eb;
-    padding: 3rem;
-    border-radius: var(--border-radius-md);
-    background: white;
+.phaseCard {
+    padding: 50px 40px;
+    border-right: var(--border-thin);
+    position: relative;
+    background: #fff;
+    transition: background 0.2s;
 }
 
-.phasePrimary {
-    border-color: var(--primary-blue);
-    background: #fcfdfe;
+.phaseCard:last-child {
+    border-right: none;
+    /* فاز ۲ کمی تیره‌تر برای تاکید */
+    background: linear-gradient(to bottom right, #fff, #f4f4f0);
 }
 
+/* برچسب فاز */
 .phaseLabel {
-    text-transform: uppercase;
-    font-size: 0.8rem;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
     font-weight: 700;
-    letter-spacing: 0.05em;
-    color: var(--text-secondary);
-    margin-bottom: 1rem;
+    color: #aaa;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
 }
 
-.phasePrimary .phaseLabel {
-    color: var(--primary-blue);
+.phaseStatus {
+    color: var(--dental-teal);
+    border: 1px solid var(--dental-teal);
+    padding: 2px 6px;
+    font-size: 0.7rem;
 }
 
-.phase h2 {
+.phaseTitle {
     font-size: 1.75rem;
-    margin-bottom: 1rem;
-    color: var(--text-primary);
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: var(--ink-black);
+    text-transform: uppercase;
 }
 
 .phaseDesc {
-    color: var(--text-secondary);
+    font-size: 1rem;
     line-height: 1.6;
-    margin-bottom: 2rem;
+    color: #444;
+    margin-bottom: 30px;
+    min-height: 80px;
 }
 
-.features {
+/* لیست ویژگی‌ها */
+.featureList {
     list-style: none;
+    border-top: 1px dashed #ccc;
+    padding-top: 20px;
 }
 
-.features li {
-    margin-bottom: 0.75rem;
-    padding-left: 1.5rem;
-    position: relative;
-    color: var(--text-primary);
+.featureList li {
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.features li::before {
-    content: "•";
-    color: var(--accent-green);
-    position: absolute;
-    left: 0;
-    font-weight: bold;
+.featureList li::before {
+    content: '>';
+    font-family: var(--font-mono);
+    font-weight: 700;
+    color: var(--dental-teal);
 }
 
-.rationale {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
+/* --- Strategy / Rationale Section (Dark) --- */
+.strategySection {
+    background-color: var(--ink-black);
+    color: white;
+    padding: 60px 40px;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    gap: 40px;
 }
 
-.rationale h3 {
+.strategyTitle {
     font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: var(--text-primary);
+    text-transform: uppercase;
+    color: var(--dental-teal);
+    border-bottom: 2px solid var(--dental-teal);
+    padding-bottom: 10px;
+    height: fit-content;
 }
 
-.rationale p {
-    color: var(--text-secondary);
-    line-height: 1.7;
+.strategyText {
     font-size: 1.1rem;
+    line-height: 1.7;
+    color: #ddd;
 }
 
+/* Responsive */
 @media (max-width: 768px) {
-    .phases {
+    .headerSection, .roadmapGrid, .strategySection {
         grid-template-columns: 1fr;
     }
+    .headerLeft { border-right: none; border-bottom: var(--border-thick); }
+    .phaseCard { border-right: none; border-bottom: var(--border-thin); }
+    .strategyTitle { margin-bottom: 20px; border-bottom: none; color: white; }
 }

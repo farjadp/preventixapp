@@ -1,0 +1,191 @@
+/**
+ * ROADMAP MODULE STYLES
+ * Style: Swiss / Gantt Log
+ * Layout: Horizontal rows with status indicators.
+ */
+
+/* کانتینر اصلی */
+.pageContainer {
+    width: 100%;
+    max-width: var(--max-width); /* 1024px */
+    margin: 0 auto;
+    background-color: var(--bg-white);
+    border-left: var(--border-thick);
+    border-right: var(--border-thick);
+    min-height: 100vh;
+}
+
+/* --- Header Section --- */
+.headerSection {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    border-bottom: var(--border-thick);
+}
+
+.headerLeft {
+    padding: 60px 40px;
+    border-right: var(--border-thick);
+}
+
+.headerRight {
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: var(--bg-paper);
+}
+
+.label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    background: var(--ink-black);
+    color: white;
+    padding: 4px 8px;
+    display: inline-block;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+}
+
+.title {
+    font-size: 3.5rem;
+    line-height: 0.95;
+    margin-bottom: 24px;
+    color: var(--ink-black);
+    text-transform: uppercase;
+}
+
+.lead {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+    font-weight: 500;
+}
+
+/* --- Timeline Rows --- */
+.timelineWrapper {
+    border-bottom: var(--border-thick);
+}
+
+.milestoneRow {
+    display: grid;
+    grid-template-columns: 200px 1fr; /* ستون چپ ثابت برای تاریخ */
+    border-bottom: var(--border-thin);
+    min-height: 180px;
+    background: #fff;
+    transition: background 0.2s;
+}
+
+.milestoneRow:last-child {
+    border-bottom: none;
+}
+
+.milestoneRow:hover {
+    background-color: var(--bg-paper);
+}
+
+/* ستون سمت چپ: تاریخ و وضعیت */
+.periodBox {
+    border-right: var(--border-thin);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #fdfdfd;
+}
+
+.periodText {
+    font-family: var(--font-mono);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--ink-black);
+    letter-spacing: -1px;
+}
+
+.statusBadge {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    border: 1px solid var(--ink-black);
+    width: fit-content;
+    text-transform: uppercase;
+}
+
+/* وضعیت تکمیل شده */
+.statusDone {
+    background: var(--ink-black);
+    color: white;
+}
+
+/* وضعیت در حال انجام */
+.statusActive {
+    background: var(--dental-teal);
+    color: white;
+    border-color: var(--dental-teal);
+}
+
+/* ستون سمت راست: محتوا */
+.contentBox {
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.milestoneTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--ink-black);
+    text-transform: uppercase;
+}
+
+.milestoneDesc {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+    max-width: 600px;
+}
+
+/* --- Progress Footer --- */
+.progressFooter {
+    padding: 40px;
+    background: var(--ink-black);
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.progressBar {
+    flex-grow: 1;
+    height: 4px;
+    background: rgba(255,255,255,0.2);
+    position: relative;
+}
+
+.progressFill {
+    width: 75%; /* درصد پیشرفت کلی پروژه */
+    height: 100%;
+    background: var(--dental-teal);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .headerSection, .milestoneRow {
+        grid-template-columns: 1fr;
+    }
+    .headerLeft { border-right: none; border-bottom: var(--border-thick); }
+    
+    .periodBox {
+        border-right: none;
+        border-bottom: var(--border-thin);
+        flex-direction: row;
+        align-items: center;
+        padding: 20px 30px;
+        min-height: auto;
+    }
+    
+    .contentBox {
+        padding: 30px;
+    }
+}

@@ -1,5 +1,5 @@
 .navbar {
-    height: 72px;
+    min-height: 72px;
     width: 100%;
     /* چسبیدن به بالا ولی با استایل کاغذی */
     position: sticky; 
@@ -15,7 +15,7 @@
     max-width: 1024px; 
     margin: 0 auto;
     padding: 0 20px; /* پدینگ مطابق با بادی صفحه */
-    height: 100%;
+    min-height: 72px;
     
     display: flex;
     align-items: center;
@@ -54,9 +54,11 @@
 
 .links {
     display: flex;
-    gap: 2rem;
-    height: 100%;
+    flex-wrap: wrap;
+    gap: 1.25rem;
     align-items: center;
+    justify-content: center;
+    padding: 10px 0;
 }
 
 .link {
@@ -68,6 +70,61 @@
     position: relative;
     padding: 4px 0;
     transition: color 0.2s;
+}
+
+.menuItem {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.caret {
+    margin-left: 6px;
+    font-size: 0.7rem;
+    color: #1a1a1a;
+}
+
+.submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 180px;
+    background: #ffffff;
+    border: 2px solid #1a1a1a;
+    box-shadow: 4px 4px 0px #1a1a1a;
+    display: none;
+    flex-direction: column;
+    padding: 8px;
+    z-index: 20;
+}
+
+.submenu::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    right: 0;
+    height: 10px;
+}
+
+.subLink {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #555;
+    text-transform: uppercase;
+    padding: 6px 8px;
+}
+
+.subLink:hover {
+    color: #1a1a1a;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+.menuItem:hover .submenu,
+.menuItem:focus-within .submenu {
+    display: flex;
 }
 
 /* هاور: خط کشیدن زیر متن به سبک کلاسیک */

@@ -1,51 +1,87 @@
+/**
+ * PAGE: How It Works
+ * ROUTE: /how-it-works
+ * STYLE: Industrial Process Log.
+ */
+
 import React from 'react';
-import Section from '@/components/ui/Section';
 import styles from './how-it-works.module.css';
 
 export default function HowItWorks() {
     const steps = [
         {
             number: '01',
-            title: 'Deploy Smart Environments',
-            description: 'We install Preventix-certified food and beverage points in workplaces and campuses. These replace standard vending or cafeteria sections.'
+            title: 'Deploy Infrastructure',
+            description: 'We install Preventix-certified food and beverage points in workplaces. This replaces standard vending machines with our intelligent supply chain nodes.'
         },
         {
             number: '02',
-            title: 'Curated Tooth-Safe Options',
-            description: 'Every item available is verified to be non-cariogenic (tooth-safe). Users physically cannot make a "bad" dental choice in this environment.'
+            title: 'Curate Defaults',
+            description: 'Every item is verified non-cariogenic. We flip the choice architecture: users physically cannot make a "bad" dental choice, so willpower is not required.'
         },
         {
             number: '03',
-            title: 'Anonymous Behavior Logging',
-            description: 'Our system tracks purchasing patterns without identifying individuals. We measure what is consumed, when, and how frequently.'
+            title: 'Log Patterns',
+            description: 'Our system tracks purchasing data anonymously. We measure exactly what is consumed, when, and how frequently to establish a risk baseline.'
         },
         {
             number: '04',
-            title: 'Measurable Insights',
-            description: 'Insurers and employers receive reports on sugar reduction and risk profile improvements across their population.'
+            title: 'Report & Optimize',
+            description: 'Insurers and employers receive monthly actuarial reports showing sugar reduction and projected dental claim savings.'
         }
     ];
 
     return (
-        <div className={styles.container}>
-            <Section background="white">
-                <div className={styles.header}>
-                    <h1>How It Works</h1>
-                    <p>A seamless integration of health and infrastructure.</p>
+        <div className={styles.pageContainer}>
+            
+            {/* 1. Header Section */}
+            <section className={styles.headerSection}>
+                <div className={styles.headerLeft}>
+                    <span className={styles.label}>// Operational Flow</span>
+                    <h1 className={styles.title}>
+                        System <br />
+                        Logic.
+                    </h1>
                 </div>
+                <div className={styles.headerRight}>
+                    <p className={styles.lead}>
+                        A seamless integration of health infrastructure into daily environments.
+                        <br /><br />
+                        <span style={{fontFamily: 'monospace', fontSize: '0.85rem'}}>STATUS: AUTOMATED</span>
+                    </p>
+                </div>
+            </section>
 
-                <div className={styles.steps}>
-                    {steps.map((step, index) => (
-                        <div key={index} className={styles.step}>
-                            <div className={styles.number}>{step.number}</div>
-                            <div className={styles.content}>
-                                <h3>{step.title}</h3>
-                                <p>{step.description}</p>
-                            </div>
+            {/* 2. Process Steps */}
+            <section className={styles.stepsWrapper}>
+                {steps.map((step, index) => (
+                    <div key={index} className={styles.stepRow}>
+                        
+                        {/* Column 1: Huge Number */}
+                        <div className={styles.stepNumberBox}>
+                            {step.number}
                         </div>
-                    ))}
-                </div>
-            </Section>
+
+                        {/* Column 2: Content */}
+                        <div className={styles.stepContent}>
+                            <h3 className={styles.stepTitle}>{step.title}</h3>
+                            <p className={styles.stepDesc}>{step.description}</p>
+                        </div>
+                    </div>
+                ))}
+            </section>
+            
+            {/* Optional: Bottom Call to Action strip */}
+            <div style={{
+                padding: '40px', 
+                textAlign: 'center', 
+                background: '#1a1a1a', 
+                color: 'white',
+                fontFamily: 'monospace'
+            }}>
+                END_OF_PROCESS // READY FOR DEPLOYMENT
+            </div>
+
         </div>
     );
 }

@@ -15,9 +15,23 @@ export default function Navbar() {
 
                 {/* Desktop Navigation */}
                 <div className={styles.links}>
-                    <Link href="/methodology" className={styles.link}>[01] Methodology</Link>
-                    <Link href="/data" className={styles.link}>[02] Data</Link>
-                    <Link href="/pricing" className={styles.link}>[03] Pricing</Link>
+                    <Link href="/about-us" className={styles.link}>About Us</Link>
+
+                    <div className={styles.menuItem}>
+                        <Link href="/product" className={styles.link}>
+                            Product
+                            <span className={styles.caret}>▾</span>
+                        </Link>
+                        <div className={styles.submenu}>
+                            <Link href="/feature" className={styles.subLink}>Feature</Link>
+                            <Link href="/road-map" className={styles.subLink}>Road Map</Link>
+                            <Link href="/how-it-works" className={styles.subLink}>How It Works</Link>
+                        </div>
+                    </div>
+
+                    <Link href="/pricing" className={styles.link}>Price</Link>
+                    <Link href="/contact" className={styles.link}>Contact Us</Link>
+                    <Link href="/team" className={styles.link}>Team</Link>
                 </div>
 
                 {/* CTA & Mobile Logic */}
