@@ -12,7 +12,7 @@ export default function HowItWorks() {
         {
             number: '01',
             title: 'Deploy Infrastructure',
-            description: 'We install Preventix-certified food and beverage points in workplaces. This replaces standard vending machines with our intelligent supply chain nodes.'
+            description: 'We install Preventix-certified food and beverage points in partner sites. This replaces standard vending machines with our intelligent supply chain nodes.'
         },
         {
             number: '02',
@@ -33,7 +33,7 @@ export default function HowItWorks() {
 
     return (
         <div className={styles.pageContainer}>
-            
+
             {/* 1. Header Section */}
             <section className={styles.headerSection}>
                 <div className={styles.headerLeft}>
@@ -47,7 +47,7 @@ export default function HowItWorks() {
                     <p className={styles.lead}>
                         A seamless integration of health infrastructure into daily environments.
                         <br /><br />
-                        <span style={{fontFamily: 'monospace', fontSize: '0.85rem'}}>STATUS: AUTOMATED</span>
+                        <span style={{ fontFamily: 'monospace', fontSize: '0.85rem' }}>STATUS: AUTOMATED</span>
                     </p>
                 </div>
             </section>
@@ -56,7 +56,7 @@ export default function HowItWorks() {
             <section className={styles.stepsWrapper}>
                 {steps.map((step, index) => (
                     <div key={index} className={styles.stepRow}>
-                        
+
                         {/* Column 1: Huge Number */}
                         <div className={styles.stepNumberBox}>
                             {step.number}
@@ -70,12 +70,12 @@ export default function HowItWorks() {
                     </div>
                 ))}
             </section>
-            
+
             {/* Optional: Bottom Call to Action strip */}
             <div style={{
-                padding: '40px', 
-                textAlign: 'center', 
-                background: '#1a1a1a', 
+                padding: '40px',
+                textAlign: 'center',
+                background: '#1a1a1a',
                 color: 'white',
                 fontFamily: 'monospace'
             }}>

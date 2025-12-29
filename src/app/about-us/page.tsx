@@ -28,26 +28,26 @@ export default function AboutUs() {
     return (
         // The container creates the "Paper Document" feel with side borders
         <div className={styles.pageContainer}>
-            
+
             {/* 1. Header Section: Split Layout */}
             <section className={styles.headerSection}>
                 <div className={styles.headerLeft}>
                     <span className={styles.label}>// Corporate Profile</span>
                     <h1 className={styles.title}>
                         WE ENGINEER <br />
-                        <span style={{color: 'var(--dental-teal)'}}>PREVENTION.</span>
+                        <span style={{ color: 'var(--dental-teal)' }}>PREVENTION.</span>
                     </h1>
                 </div>
                 <div className={styles.headerRight}>
                     <p className={styles.lead}>
-                        Preventix is building the invisible infrastructure to eliminate preventable dental risk in the workplace.
+                        Preventix is building the invisible infrastructure to eliminate preventable dental risk.
                     </p>
                 </div>
             </section>
 
             {/* 2. Mission Grid: Three Columns with Technical Borders */}
             <section className={styles.missionGrid}>
-                
+
                 <div className={styles.gridItem}>
                     <div className={styles.gridIcon}>[A]</div>
                     <h3 className={styles.gridTitle}>Our Mission</h3>
@@ -77,8 +77,8 @@ export default function AboutUs() {
             {/* 3. Values Section: Dark/Inverted Block for Contrast */}
             <section className={styles.valuesSection}>
                 <div className={styles.valuesHeader}>
-                    <h2 style={{fontSize: '2rem', textTransform: 'uppercase'}}>Core Methodology</h2>
-                    <span style={{fontFamily: 'monospace', fontSize: '0.8rem'}}>SYS_VALUES_V1</span>
+                    <h2 style={{ fontSize: '2rem', textTransform: 'uppercase' }}>Core Methodology</h2>
+                    <span style={{ fontFamily: 'monospace', fontSize: '0.8rem' }}>SYS_VALUES_V1</span>
                 </div>
 
                 <div className={styles.valuesGrid}>

@@ -5,12 +5,12 @@ export default function Home() {
   return (
     // کل سایت داخل این فریم قرار می‌گیرد تا جمع و جور باشد
     <div className="main-frame">
-      
+
       {/* 1. Navbar (Simple & Bordered) */}
-      <nav style={{ 
-        borderBottom: '2px solid #1a1a1a', 
-        padding: '20px 30px', 
-        display: 'flex', 
+      <nav style={{
+        borderBottom: '2px solid #1a1a1a',
+        padding: '20px 30px',
+        display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center'
       }}>
@@ -20,17 +20,17 @@ export default function Home() {
 
       {/* 2. Hero Split Screen */}
       <div className={`${styles.gridContainer} ${styles.borderBottom}`}>
-        
+
         {/* Left: Text */}
         <div className={`${styles.paddingBox} ${styles.borderRight}`}>
           <span className={styles.heroTag}>System Status: Active</span>
           <h1 className={styles.heroTitle}>
             DESIGN THE <br />
             ENVIRONMENT. <br />
-            <span style={{color: 'var(--dental-teal)'}}>FIX THE TEETH.</span>
+            <span style={{ color: 'var(--dental-teal)' }}>FIX THE TEETH.</span>
           </h1>
           <p className={styles.heroLead}>
-            An infrastructure-first approach to dental risk. We redesign workplace food choices so health happens automatically.
+            An infrastructure-first approach to dental risk. We redesign food choices so health happens automatically.
           </p>
           <Link href="/contact" className={styles.btnPrimary}>
             VIEW PILOT DATA
@@ -40,7 +40,7 @@ export default function Home() {
         {/* Right: Abstract "Blueprint" Visualization */}
         <div className={styles.patternBox}>
           <div className={styles.dataCard}>
-            <div style={{borderBottom: '2px solid black', paddingBottom:'10px', marginBottom:'10px', fontWeight:'bold'}}>
+            <div style={{ borderBottom: '2px solid black', paddingBottom: '10px', marginBottom: '10px', fontWeight: 'bold' }}>
               RISK_MONITOR_LOG
             </div>
             <div className={styles.dataRow}>
@@ -59,7 +59,7 @@ export default function Home() {
               <span>Intervention Type</span>
               <span className={styles.dataVal}>PASSIVE</span>
             </div>
-            <div style={{marginTop: '15px', fontSize: '0.7rem', color: '#666'}}>
+            <div style={{ marginTop: '15px', fontSize: '0.7rem', color: '#666' }}>
               *Data aggregated from 50+ enterprise cafeterias.
             </div>
           </div>
@@ -73,7 +73,7 @@ export default function Home() {
 
       {/* 4. Three Column Features */}
       <div className={styles.tripleGrid}>
-        
+
         <div className={styles.featureBox}>
           <div className={styles.featureNum}>01</div>
           <h3 className={styles.featureTitle}>Curated Defaults</h3>
