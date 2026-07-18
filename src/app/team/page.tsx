@@ -9,32 +9,32 @@ import React from 'react';
 import styles from './team.module.css';
 
 export default function Team() {
-    // Data populated from your specific request
+    // Current Preventix leadership team
     const team = [
         {
             name: 'Mahnoosh Hendesi',
             role: 'Chief Executive Officer (CEO)',
-            bio: 'Mahnoosh is responsible for vision, execution, and external trust. Leading the startup’s direction and coordinating the team, she ensures the product moves from idea to reality. Her focus is on keeping the company aligned, disciplined, and moving forward.'
+            bio: 'Mahnoosh leads Preventix’s vision, company strategy, and overall execution, keeping the organization aligned as it moves from planning to measurable impact.'
         },
         {
-            name: 'Amirhossein Rismanchian',
+            name: 'Ali Abedini Nasab Mohajeri',
+            role: 'Product Owner',
+            bio: 'Ali guides product priorities and translates Preventix’s strategy into clear requirements, ensuring that development stays focused on user needs and business outcomes.'
+        },
+        {
+            name: 'Batoulsadat Mousavifard',
+            role: 'Director of Medical Orientation (DMO) & Research and Development (R&D)',
+            bio: 'Batoulsadat directs the medical orientation and research and development activities, helping ensure that Preventix’s approach remains evidence-informed and clinically relevant.'
+        },
+        {
+            name: 'Armin Hanafi Sahzabi',
+            role: 'Chief Marketing Officer (CMO) & Frontend Developer',
+            bio: 'Armin leads marketing and brand communication while contributing to frontend development, connecting Preventix’s public presence with its digital product experience.'
+        },
+        {
+            name: 'Pouria Kheiri',
             role: 'Chief Operating Officer (COO)',
-            bio: 'Amirhossein brings hands-on experience running real businesses. He owns operations, pilot programs, and partnerships. He is the bridge between theory and reality, ensuring ideas work on the ground in cafés and institutions.'
-        },
-        {
-            name: 'Mahmoudreza Nematbakhsh',
-            role: 'Chief Business & Strategy Officer',
-            bio: 'Mahmoudreza oversees business structure, partnerships, and long-term strategy. His background in governance ensures Preventix is scalable, compliant, and financially sane, preventing growth from turning into chaos.'
-        },
-        {
-            name: 'Hamidreza Rezaei',
-            role: 'Chief Data & Systems Advisor',
-            bio: 'Hamidreza guides data architecture and AI reasoning models. His strength is systems thinking and academic rigor, ensuring Preventix’s intelligence layer is defensible, explainable, and aligned with real research.'
-        },
-        {
-            name: 'Parastoo Heydari',
-            role: 'Technical Implementation Lead',
-            bio: 'Parastoo handles technical execution, integrations, and IoT concepts. With a background in electrical engineering and control systems, she ensures that what Preventix promises can actually be built and maintained.'
+            bio: 'Pouria oversees day-to-day operations and operational planning, helping turn Preventix’s strategy into coordinated and repeatable execution.'
         }
     ];
 
@@ -44,7 +44,7 @@ export default function Team() {
             {/* 1. Page Header */}
             <section className={styles.headerSection}>
                 <div className={styles.headerLeft}>
-                    <span className={styles.label}>// Leadership</span>
+                    <span className={styles.label}>{'// Leadership'}</span>
                     <h1 className={styles.title}>
                         Operational <br />
                         Structure.
